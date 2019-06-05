@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>histogram_perception</name>
+  <version>1.0.0</version>
+  <description>Simple camera perception node via color histogram</description>
+
+  <author email="afdaniele@ttic.edu">Andrea F Daniele</author>
+  <maintainer email="afdaniele@ttic.edu">Andrea F Daniele</maintainer>
+
+  <license>private</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>duckietown_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+
+  <run_depend>duckietown_msgs</run_depend>
+  <run_depend>rospy</run_depend>
+</package>

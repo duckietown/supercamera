@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="vehicle_name" doc="Name of vehicle." default="$(env VEHICLE_NAME)"/>
+  <arg name="config_file" default="default" doc="Configuration file"/>
+
+  <arg name="_module" default="histogram_perception" doc="DO NOT CHANGE"/>
+
+  <remap from="$(arg _module)/image" to="camera_node/image"/>
+
+  <node ns="$(arg vehicle_name)"  pkg="$(arg _module)" type="$(arg _module)_node.py" name="$(arg _module)" output="screen" clear_params="true" required="true">
+    <rosparam command="load" file="$(find histogram_perception)/config/$(arg config_file).yaml"/>
+  </node>
+
+  <node pkg="image_transport" type="republish" name="image_decoder" args="compressed in:=/$(arg vehicle_name)/camera_node/image raw out:=/$(arg vehicle_name)/camera_node/image" output="screen">
+  </node>
+
+</launch>
