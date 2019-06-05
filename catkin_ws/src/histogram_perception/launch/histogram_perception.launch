@@ -11,7 +11,7 @@
     <rosparam command="load" file="$(find histogram_perception)/config/$(arg config_file).yaml"/>
   </node>
 
-  <node pkg="image_transport" type="republish" name="image_decoder" args="compressed in:=/$(arg vehicle_name)/camera_node/image raw out:=/$(arg vehicle_name)/camera_node/image" output="screen">
+  <node ns="$(arg vehicle_name)" pkg="image_transport" type="republish" name="image_decoder" args="compressed in:=/$(arg vehicle_name)/camera_node/image raw out:=/$(arg vehicle_name)/camera_node/image" output="screen">
   </node>
 
 </launch>
