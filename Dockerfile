@@ -1,7 +1,7 @@
 ARG ARCH=arm32v7
 ARG BRANCH
 
-FROM duckietown/${ARCH}-ros-commons:afdaniele-devel
+FROM duckietown/ros-commons:afdaniele-devel-${ARCH}
 
 # configure environment
 ENV LAUNCH_FILE="${SOURCE_DIR}/launch.sh"
